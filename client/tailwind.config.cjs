@@ -17,44 +17,76 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        border: '#E6DDD1',
+        input: '#F5EBE0',
+        ring: 'rgba(139, 90, 43, 0.3)',
+        background: '#FFFAF5',
+        foreground: '#2C2418',
         primary: {
-          DEFAULT: '#F5385d',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: '#8B5A2B',
+          light: '#A67C52',
+          dark: '#6B4A2B',
+          foreground: '#FFFAF5',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: '#D2B48C',
+          light: '#E6D2B8',
+          dark: '#BFA27C',
+          foreground: '#2C2418',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: '#F9A826',
+          light: '#FFBE5C',
+          dark: '#E08E00',
+          foreground: '#FFFAF5',
         },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+        destructive: {
+          DEFAULT: '#F44336',
+          foreground: '#FFFFFF',
+        },
+        muted: {
+          DEFAULT: '#F5EBE0',
+          foreground: '#9E9287',
+        },
+        success: {
+          DEFAULT: '#4CAF50',
+          foreground: '#FFFFFF',
+        },
+        warning: {
+          DEFAULT: '#FF9800',
+          foreground: '#FFFFFF',
+        },
+        info: {
+          DEFAULT: '#2196F3',
+          foreground: '#FFFFFF',
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: '#FFFAF5',
+          foreground: '#2C2418',
+        },
+        popover: {
+          DEFAULT: '#FFFAF5',
+          foreground: '#2C2418',
         },
       },
+      fontFamily: {
+        sans: ['DM Sans', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
+      },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        lg: '1rem',
+        md: '0.5rem',
+        sm: '0.25rem',
+        xl: '1.5rem',
+        '2xl': '2rem',
+      },
+      boxShadow: {
+        sm: '0 1px 2px rgba(44, 36, 24, 0.05)',
+        DEFAULT: '0 4px 6px rgba(44, 36, 24, 0.1)',
+        md: '0 4px 6px rgba(44, 36, 24, 0.1)',
+        lg: '0 10px 15px rgba(44, 36, 24, 0.1)',
+        xl: '0 20px 25px rgba(44, 36, 24, 0.15)',
+        inner: 'inset 0 2px 4px rgba(44, 36, 24, 0.05)',
       },
       keyframes: {
         'accordion-down': {
@@ -65,10 +97,20 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        slideUp: {
+          from: { transform: 'translateY(20px)', opacity: 0 },
+          to: { transform: 'translateY(0)', opacity: 1 },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fadeIn 0.5s ease forwards',
+        'slide-up': 'slideUp 0.5s ease forwards',
       },
     },
   },

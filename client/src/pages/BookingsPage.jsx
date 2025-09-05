@@ -89,7 +89,7 @@ const BookingsPage = () => {
                 No cafe found!
               </h3>
               <p>
-                {/* Time to dust off you bags and start planning your next adventure */}
+                Time to dust off you bags and start planning your next adventure
               </p>
               <Link to="/" className="my-4">
                 <div className="flex w-40 justify-center rounded-lg border border-black p-3 text-lg font-semibold hover:bg-gray-50">

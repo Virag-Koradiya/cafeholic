@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
 
+/**
+ * PlaceGallery component for displaying cafe photos
+ * Redesigned with cafe theme aesthetics
+ */
 const PlaceGallery = ({ place }) => {
   const [showAllPhotos, setShowAllPhotos] = useState(false);
 
   if (showAllPhotos) {
     return (
-      <div className="fixed inset-0 z-20 overflow-auto bg-white text-white">
-        <div className="grid gap-4 bg-white px-2 py-20 md:p-8">
-          <div>
+      <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm overflow-auto">
+        <div className="container mx-auto px-4 py-20">
+          <div className="mb-6 flex justify-between items-center">
+            <h3 className="font-heading text-xl font-semibold text-foreground">
+              {place.title} - All Photos
+            </h3>
             <button
-              className="fixed right-2 top-8 flex gap-1 rounded-2xl bg-white py-2 px-4 text-black shadow-sm shadow-gray-500 md:right-12"
+              className="flex items-center gap-2 rounded-full bg-card py-2 px-4 text-foreground shadow-sm border border-border hover:bg-muted transition-colors"
               onClick={() => setShowAllPhotos(false)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="h-6 w-6"
+                className="h-5 w-5 text-primary"
               >
                 <path
                   fillRule="evenodd"
@@ -24,90 +31,93 @@ const PlaceGallery = ({ place }) => {
                   clipRule="evenodd"
                 />
               </svg>
-              Close photos
+              Close gallery
             </button>
           </div>
-          {place?.photos?.length > 0 &&
-            place.photos.map((photo, index) => (
-              <div key={index} className="max-w-full">
-                {/* <Image src={photo} /> */}
-                <img src={photo} alt="" />
-              </div>
-            ))}
+          
+          <div className="grid gap-6">
+            {place?.photos?.length > 0 &&
+              place.photos.map((photo, index) => (
+                <div key={index} className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+                  <img 
+                    src={photo} 
+                    alt={`${place.title} - Photo ${index + 1}`} 
+                    className="w-full object-cover"
+                  />
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     );
   }
+  
   return (
-    <div className="relative">
-      {/* Medium devices */}
-      <div className="hidden h-[400px] max-h-[450px] grid-cols-4 gap-2 overflow-hidden rounded-[12px] md:grid">
-        {/* column 1 */}
+    <div className="relative mb-8">
+      {/* Medium and large devices */}
+      <div className="hidden md:grid h-[450px] grid-cols-4 gap-2 overflow-hidden rounded-xl">
+        {/* Main photo (column 1) */}
         <div className="col-span-2 overflow-hidden">
           {place.photos?.[0] && (
-            <div className="h-full w-full overflow-hidden bg-red-200">
+            <div className="h-full w-full overflow-hidden rounded-l-xl">
               <img
                 onClick={() => setShowAllPhotos(true)}
-                className="h-full w-full cursor-pointer object-cover"
+                className="h-full w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-105"
                 src={place.photos[0]}
-                alt=""
+                alt={`${place.title} - Main Photo`}
               />
             </div>
           )}
         </div>
-        {/* column 2 */}
+        
+        {/* Secondary photos (column 2) */}
         <div className="col-span-1 overflow-hidden">
-          {/* row grid inside column 2 */}
           <div className="grid h-full grid-rows-2 gap-2">
             {place.photos?.[1] && (
-              // row 1
-              <div className="bg-gray-200">
+              <div className="overflow-hidden">
                 <img
                   onClick={() => setShowAllPhotos(true)}
-                  className="h-full w-full cursor-pointer object-cover"
+                  className="h-full w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-105"
                   src={place.photos[1]}
-                  alt=""
+                  alt={`${place.title} - Photo 2`}
                 />
               </div>
             )}
 
             {place.photos?.[2] && (
-              // row 2
-              <div className="bg-gray-200">
+              <div className="overflow-hidden">
                 <img
                   onClick={() => setShowAllPhotos(true)}
-                  className="h-full w-full cursor-pointer object-cover"
+                  className="h-full w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-105"
                   src={place.photos[2]}
-                  alt=""
+                  alt={`${place.title} - Photo 3`}
                 />
               </div>
             )}
           </div>
         </div>
-        {/* column 3 */}
+        
+        {/* Tertiary photos (column 3) */}
         <div className="col-span-1 overflow-hidden">
-          {/* row grid inside column 3 */}
           <div className="grid h-full grid-rows-2 gap-2">
             {place.photos?.[3] && (
-              // row 1
-              <div className="h-full bg-gray-200">
+              <div className="overflow-hidden">
                 <img
                   onClick={() => setShowAllPhotos(true)}
-                  className="h-full w-full cursor-pointer object-cover"
+                  className="h-full w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-105"
                   src={place.photos[3]}
-                  alt=""
+                  alt={`${place.title} - Photo 4`}
                 />
               </div>
             )}
 
             {place.photos?.[4] && (
-              // row 2
-              <div className="h-full bg-gray-200">
+              <div className="overflow-hidden rounded-tr-xl">
                 <img
                   onClick={() => setShowAllPhotos(true)}
-                  className="h-full w-full cursor-pointer object-cover"
+                  className="h-full w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-105"
                   src={place.photos[4]}
-                  alt=""
+                  alt={`${place.title} - Photo 5`}
                 />
               </div>
             )}
@@ -116,28 +126,28 @@ const PlaceGallery = ({ place }) => {
       </div>
 
       {/* Mobile devices */}
-      <div className="flex overflow-hidden rounded-[12px] md:hidden">
-        {place.photos?.[0] && (
-          <div className="h-full">
+      <div className="md:hidden">
+        <div className="relative h-[300px] overflow-hidden rounded-xl">
+          {place.photos?.[0] && (
             <img
               onClick={() => setShowAllPhotos(true)}
-              className="h-full cursor-pointer object-cover"
+              className="h-full w-full cursor-pointer object-cover"
               src={place.photos[0]}
-              alt=""
+              alt={`${place.title} - Main Photo`}
             />
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       <button
-        className="absolute bottom-2 right-2 flex gap-1 rounded-xl bg-white py-2 px-4 shadow-md shadow-gray-500 "
+        className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-card py-2 px-4 text-foreground shadow-md border border-border hover:bg-muted transition-colors"
         onClick={() => setShowAllPhotos(true)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="h-6 w-6"
+          className="h-5 w-5 text-primary"
         >
           <path
             fillRule="evenodd"
@@ -145,7 +155,7 @@ const PlaceGallery = ({ place }) => {
             clipRule="evenodd"
           />
         </svg>
-        Show all photos
+        View all photos
       </button>
     </div>
   );

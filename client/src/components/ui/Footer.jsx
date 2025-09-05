@@ -1,180 +1,126 @@
 import React from 'react';
 
+/**
+ * Footer component for the application
+ * Redesigned with cafe theme aesthetics
+ */
 const Footer = () => {
   return (
-    <div className="flex  w-full justify-center bg-gray-100 pb-8">
-      <div className="flex w-full max-w-screen-xl flex-col items-center px-6">
-        {/* grid for links */}
-        <div className="grid  w-full grid-cols-1 gap-4 py-8 text-sm md:grid-cols-3 ">
-          {/* <div className="flex flex-col gap-1">
-            <strong className="font-medium">Support</strong>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Help Center
-              </span>
+    <footer className="w-full bg-muted py-12">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
+          <div className="space-y-4">
+            <h3 className="font-heading font-semibold text-primary">Cafeholic</h3>
+            <p className="text-sm text-muted-foreground">
+              Discover the perfect café experience for every mood and occasion.
             </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Get help with a safety issue
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Air cover
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Anti-discrimination
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Disablity support
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Cancellation options
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Report neighbourhood concern
-              </span>
-            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="rounded-full bg-background p-2 text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" className="rounded-full bg-background p-2 text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+              <a href="#" className="rounded-full bg-background p-2 text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
           </div>
-          <div className="flex flex-col gap-1">
-            <strong className="font-medium">Hosting</strong>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Airbnb your home
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                AirCover for Hosts
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Hosting resources
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Community forum
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Hosting responsibly
-              </span>
-            </p>
+          
+          <div className="space-y-4">
+            <h4 className="font-heading font-medium text-foreground">Explore</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Aesthetic Cafés</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Rooftop Cafés</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Work-friendly Cafés</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Budget-friendly Cafés</a>
+              </li>
+            </ul>
           </div>
-          <div className="flex flex-col gap-1">
-            <strong className="font-medium">Airbnb</strong>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Newsroom
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                New features
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Careers
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Investors
-              </span>
-            </p>
-            <p>
-              <span className="cursor-pointer font-normal text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                Airbnb.org emergency stays
-              </span>
-            </p>
-          </div> */}
+          
+          <div className="space-y-4">
+            <h4 className="font-heading font-medium text-foreground">Resources</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Help Center</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">List Your Café</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Booking Guidelines</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Community Forum</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="font-heading font-medium text-foreground">Company</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">About Us</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Careers</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Press</a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground transition-colors hover:text-primary">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <div className="my-4 w-full border-[1px] border-gray-200"></div>
-
-        <div className="flex w-full flex-col items-center justify-between gap-4 md:gap-0 lg:flex-row">
-          <div className="mt-4 flex w-full justify-between gap-10 md:order-last md:w-auto">
-            <div className="flex text-sm font-semibold">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="mr-2 h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
-                />
-              </svg>
-              English(IN) <span className="mx-4">₹ INR</span>
+        
+        <div className="mt-12 border-t border-border pt-8">
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-muted-foreground">&copy; 2024 Cafeholic, Inc.</p>
+              <div className="hidden h-4 w-px bg-border md:block"></div>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary">Privacy</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary">Terms</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary">Sitemap</a>
             </div>
-            <div className="flex gap-3">
-              {/* facebook icon */}
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer"
-                viewBox="0 0 50 50"
-              >
-                <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37,19h-2c-2.14,0-3,0.5-3,2 v3h5l-1,5h-4v15h-5V29h-4v-5h4v-3c0-4,2-7,6-7c2.9,0,4,1,4,1V19z"></path>
-              </svg> */}
-
-              {/* twitter icon */}
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer"
-                viewBox="0 0 50 50"
-              >
-                <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
-              </svg> */}
-
-              {/* instagram icon */}
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer"
-                viewBox="0 0 50 50"
-              >
-                <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"></path>
-              </svg> */}
-            </div>
-          </div>
-
-          <div className="flex w-full flex-col gap-2 px-1 font-normal text-gray-700 md:w-auto md:flex-row md:items-center md:gap-8">
-            <p className="text-sm">&copy; 2024 Cafeholic, Inc.</p>
-            <div>
-              {/* <ul className=" flex gap-6 text-sm text-gray-700">
-                <li className="cursor-pointer text-gray-700 decoration-1 underline-offset-1 hover:underline md:list-disc">
-                  Privacy
-                </li>
-                <li className="cursor-pointer list-disc text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                  Terms
-                </li>
-                <li className="cursor-pointer list-disc text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                  Sitemap
-                </li>
-                <li className="cursor-pointer list-disc text-gray-700 decoration-1 underline-offset-1 hover:underline">
-                  Company details
-                </li>
-              </ul> */}
+            
+            <div className="flex items-center gap-3">
+              <button className="flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                English (IN)
+              </button>
+              <button className="flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                ₹ INR
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
