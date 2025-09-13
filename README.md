@@ -1,4 +1,4 @@
-# Caféholic  
+# ☕ Caféholic  
 
 Caféholic is a full-stack web platform that allows users to discover cafés, browse menus, and book tables online. It features three different roles:  
 
